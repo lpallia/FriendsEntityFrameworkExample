@@ -32,11 +32,9 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -49,12 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201811052256030_Initial.cs" />
+    <Compile Include="Migrations\201811052256030_Initial.Designer.cs">
+      <DependentUpon>201811052256030_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserDataAccess.cs" />
     <Compile Include="AgendaDataAccess.cs" />
     <Compile Include="FriendContext.cs" />
-    <Compile Include="Migrations\201805240126458_InitialWithFluentApiGuidGen.cs" />
-    <Compile Include="Migrations\201805240126458_InitialWithFluentApiGuidGen.Designer.cs">
-      <DependentUpon>201805240126458_InitialWithFluentApiGuidGen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,8 +72,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805240126458_InitialWithFluentApiGuidGen.resx">
-      <DependentUpon>201805240126458_InitialWithFluentApiGuidGen.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811052256030_Initial.resx">
+      <DependentUpon>201811052256030_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
