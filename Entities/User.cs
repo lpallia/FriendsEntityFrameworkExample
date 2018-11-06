@@ -8,12 +8,10 @@ namespace Entities
 {
     public class User
     {
-
         public User()
         {
-            this.Agendas = new List<Agenda>(); 
+            this.Agendas = new HashSet<Agenda>();
         }
-
         public Guid Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }

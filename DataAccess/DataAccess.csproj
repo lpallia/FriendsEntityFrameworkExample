@@ -47,13 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201811052256030_Initial.cs" />
-    <Compile Include="Migrations\201811052256030_Initial.Designer.cs">
-      <DependentUpon>201811052256030_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserDataAccess.cs" />
     <Compile Include="AgendaDataAccess.cs" />
     <Compile Include="FriendContext.cs" />
+    <Compile Include="Migrations\201811062005205_Initial.cs" />
+    <Compile Include="Migrations\201811062005205_Initial.Designer.cs">
+      <DependentUpon>201811062005205_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,8 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811052256030_Initial.resx">
-      <DependentUpon>201811052256030_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811062005205_Initial.resx">
+      <DependentUpon>201811062005205_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -34,7 +34,7 @@ namespace DataAccess
             using (FriendContext context = new FriendContext())
             {
                 Agenda agenda = context.Agendas.FirstOrDefault(a => a.Id == id);
-                context.Entry(agenda).Reference(a => a.Owner).Load();
+                context.Entry(agenda).Collection(a => a.Owner).Load();
                 context.Entry(agenda).Collection(a => a.Contacts).Load(); 
                 return agenda;
             }
@@ -53,8 +53,12 @@ namespace DataAccess
             using (FriendContext context = new FriendContext())
             {
                 context.Entry(entity).State = EntityState.Modified;
-                context.Entry(entity.Owner).State = EntityState.Modified;
+                //context.Entry(entity.Owner).State = EntityState.Modified;
 
+                foreach (var owner in entity.Owner)
+                {
+                    context.Entry(owner).State = owner.Id.Equals(Guid.Empty) ? EntityState.Added : EntityState.Unchanged;
+                }
                 foreach (var contact in entity.Contacts)
                 {
                     context.Entry(contact).State = contact.Id.Equals(Guid.Empty) ? EntityState.Added : EntityState.Unchanged;
