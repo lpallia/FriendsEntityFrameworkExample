@@ -131,6 +131,7 @@ namespace EFExample
             Console.WriteLine("\n\nSe va a modificar la agenda 1");
             Console.ReadKey();
 
+            aCopy = dataAccess.Get(a.Id);
             aCopy.Name = "BLABLA";
             aCopy.Contacts.Add(new User() { Name = "Kid", Age = 20 });
             aCopy.Owner.Add(contact3);
